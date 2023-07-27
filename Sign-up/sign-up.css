@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* flex-shrink: 20%; */
+}
+
+.bg-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-logo img {
+  background-color: #000;
+  min-width: 120px;
+  height: 40px;
+  margin-top: 15px;
+}
+
+.card {
+  width: 296px;
+  height: 500px;
+  padding: 20px 18px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 25px auto;
+}
+
+.card h1 {
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.card label {
+  font-size: 13px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #000 !important;
+}
+
+.card input {
+  width: 285px;
+  height: 25px;
+  padding: 3px 6px;
+  padding-top: 3px;
+  background-color: #fff;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+  line-height: normal;
+}
+
+.card input :after {
+  color: #0066c0;
+}
+
+.card button {
+  width: 299px;
+  height: 31px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  background-color: #f0c14b;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  background-image: linear-gradient(#f7dad0, #e2b33b);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+footer .span {
+  font-size: 12px;
+}
+
+.card p,
+.card p a {
+  font-size: 12px;
+}
+
+a {
+  text-decoration-line: none;
+  color: #0066c0;
+}
+
+a:hover {
+  color: chocolate;
+  text-decoration: underline;
+}
+
+.card a {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.Icon::after {
+  display: inline-block;
+  content: "";
+  border-top: 4px solid transparent;
+  border-left: 4px solid #0066c0;
+  border-bottom: 4px solid transparent;
+  margin-left: 5px;
+}
+
+footer .links {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin: 25px auto 25px auto;
+  font-size: 11px;
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  color: rgb(80, 80, 80);
+}
+
+footer::before {
+  content: "";
+  justify-content: center;
+  display: flex;
+  width: 80%;
+  margin: 20px;
+  height: 34px;
+  margin-top: -20px;
+  border-top: 10px solid transparent;
+  box-shadow: 0 10px 19px -20px #333;
+}
+
+.error {
+  color: red;
+}
