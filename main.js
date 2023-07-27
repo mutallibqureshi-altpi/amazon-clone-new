@@ -8,6 +8,8 @@ const cont2 = document.querySelector(".shop-section");
 let inputData = "";
 let page = 1;
 
+let data = [];
+
 const generateData = async () => {
   inputData = input.value;
 
@@ -15,10 +17,10 @@ const generateData = async () => {
     `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${ACCESS_KEY}`
   );
   const res = await url.json();
-  const data = res.results;
+  data = res.results;
 
   data.map((prev) => {
-    console.log(prev);
+    // console.log(prev);
     // main.innerHTML = "";
     cont1.style.display = "none";
     cont2.innerHTML = "";
@@ -28,17 +30,35 @@ const generateData = async () => {
     title.innerHTML = prev.alt_description;
     const image = document.createElement("img");
     image.src = prev.urls.small;
-    image.alt = prev.alt_description;
+    image.alt = prev.id;
     image.style.height = "200px";
     const price = document.createElement("p");
     price.innerHTML = `Prices:$${prev.likes}`;
+    const cartBtn = document.createElement("button");
+    cartBtn.classList.add("btn-cart");
+    cartBtn.innerHTML = "cart";
 
     imageWrapper.appendChild(title);
     imageWrapper.appendChild(image);
     imageWrapper.appendChild(price);
+    imageWrapper.appendChild(cartBtn);
     main.appendChild(imageWrapper);
   });
   page++;
 };
+
+localStorage.setItem("test", "hello");
+
+main.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-cart")) {
+    const id = e.target.previousSibling.previousSibling.getAttribute("alt");
+
+    const item = data.find((item) => item.id == id);
+    localStorage.setItem("cartItem", JSON.stringify(item));
+    console.log(item);
+  } else {
+    console.log("dsoiuj");
+  }
+});
 
 btn.addEventListener("click", generateData);

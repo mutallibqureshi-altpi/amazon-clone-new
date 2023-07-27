@@ -76,6 +76,7 @@
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   color: #0f1111;
+  cursor: pointer;
 }
 .nav-search:hover {
   border: 2px solid orange;
@@ -133,6 +134,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  width: 100%;
 }
 
 .hero-msg {
@@ -247,4 +249,50 @@ a {
 
 .show-more {
   display: none;
+}
+
+.main-container {
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.image-cont {
+  margin: 20px 0 0 0;
+  width: 22%;
+  height: 300px;
+  background-color: #fff;
+  padding: 10px;
+  position: relative;
+}
+
+.image-cont img {
+  width: 100%;
+  height: 180px;
+}
+
+.image-cont h3 {
+  font-size: 1.3rem;
+  height: 60px;
+  font-weight: 700;
+}
+
+.image-cont p {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.image-cont button {
+  width: 50%;
+  font-size: 1rem;
+  padding: 8px;
+  background: rgb(102, 30, 30);
+  margin-top: 5px;
+  color: #fff;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
 }
