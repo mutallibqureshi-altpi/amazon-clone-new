@@ -25,3 +25,5 @@ removeBtn.addEventListener("click", removeData);
 if (data === null) {
   removeData();
 }
+
+console.log(JSON.parse(localStorage.getItem("cart-item")));

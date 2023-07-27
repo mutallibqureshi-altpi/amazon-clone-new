@@ -49,16 +49,26 @@ const generateData = async () => {
 
 localStorage.setItem("test", "hello");
 
+const arr = [];
 main.addEventListener("click", function (e) {
   if (e.target.classList.contains("btn-cart")) {
     const id = e.target.previousSibling.previousSibling.getAttribute("alt");
 
     const item = data.find((item) => item.id == id);
-    localStorage.setItem("cartItem", JSON.stringify(item));
-    console.log(item);
+    // localStorage.setItem("cartItem", JSON.stringify(item));
+    arr.push(item);
+    const arr2 = JSON.parse(localStorage.getItem("cart-item"));
+    console.log(arr2);
+    arr2.forEach((item) => {
+      arr.push(item);
+    });
+    console.log(arr);
+    localStorage.setItem("cart-item", JSON.stringify(arr));
   } else {
     console.log("dsoiuj");
   }
 });
 
 btn.addEventListener("click", generateData);
+
+const panelFire = document.querySelector(".panel-all");
