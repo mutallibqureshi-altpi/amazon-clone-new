@@ -55,15 +55,14 @@ main.addEventListener("click", function (e) {
     const id = e.target.previousSibling.previousSibling.getAttribute("alt");
 
     const item = data.find((item) => item.id == id);
-    // localStorage.setItem("cartItem", JSON.stringify(item));
     arr.push(item);
     const arr2 = JSON.parse(localStorage.getItem("cart-item"));
-    console.log(arr2);
-    arr2.forEach((item) => {
+    arr2?.forEach((item) => {
       arr.push(item);
     });
     console.log(arr);
     localStorage.setItem("cart-item", JSON.stringify(arr));
+    console.log(JSON.parse(localStorage.getItem("cart-item")));
   } else {
     console.log("dsoiuj");
   }
