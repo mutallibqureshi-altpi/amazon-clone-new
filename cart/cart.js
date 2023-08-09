@@ -23,11 +23,6 @@ const removeBtn = document.querySelectorAll(".remove-item");
 
 removeBtn?.forEach((btn) => {
   btn.addEventListener("click", function (e) {
-    // const index = data.findIndex((item) => item.id !== id);
-    // const data1 = data.splice(index, 1);
-    // localStorage.setItem("cart-item", JSON.stringify(data1));
-    // location.reload();
-
     const id = e.target.id;
     const newData = data.filter((item) => item.id !== id);
     localStorage.setItem("cart-item", JSON.stringify(newData));

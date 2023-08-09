@@ -305,3 +305,30 @@ a {
   text-align: center;
   font-size: 1rem;
 }
+
+#left {
+  position: absolute;
+  top: 15rem;
+  left: 2rem;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#left i {
+  font-size: 2rem;
+}
+
+#right {
+  position: absolute;
+  top: 15rem;
+  right: 2rem;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#right i {
+  font-size: 2rem;
+}

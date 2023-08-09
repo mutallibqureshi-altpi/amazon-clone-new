@@ -5,6 +5,9 @@ const main = document.querySelector(".main-container");
 const cont1 = document.querySelector(".hero-section");
 const cont2 = document.querySelector(".shop-section");
 const cartNumber = document.querySelector(".cart-number");
+const leftArrow = document.getElementById("left");
+const rightArrow = document.getElementById("right");
+const slider = document.querySelectorAll(".slider");
 
 let inputData = "";
 let page = 1;
@@ -12,6 +15,12 @@ let page = 1;
 let data = [];
 
 cartNotification();
+
+input.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    generateData();
+  }
+});
 
 const generateData = async () => {
   inputData = input.value;
@@ -67,3 +76,46 @@ main.addEventListener("click", function (e) {
 });
 
 btn.addEventListener("click", generateData);
+
+let activeSlide = 0;
+
+const slideLeft = () => {
+  activeSlide--;
+
+  if (activeSlide < 0) {
+    activeSlide = slider.length - 1;
+  }
+
+  setBgToBody();
+  setActiveSlides();
+};
+
+leftArrow.addEventListener("click", slideLeft);
+
+const slideRight = () => {
+  activeSlide++;
+
+  if (activeSlide > slider.length - 1) {
+    activeSlide = 0;
+  }
+
+  setBgToBody();
+  setActiveSlides();
+};
+
+rightArrow.addEventListener("click", slideRight);
+
+setBgToBody();
+
+function setBgToBody() {
+  cont1.style.backgroundImage = slider[activeSlide].style.backgroundImage;
+}
+
+function setActiveSlides() {
+  slider.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slider[activeSlide].classList.add("active");
+}
+
+setInterval(slideRight, 2000);
